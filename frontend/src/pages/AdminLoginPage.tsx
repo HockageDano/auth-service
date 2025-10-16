@@ -14,8 +14,11 @@ export default function AdminLoginPage() {
       const res = await api.post("/auth/admin/login", { username, password });
       const { accessToken, mustChangePassword } = res.data;
 
+      // 🔹 Зберігаємо токен і прапор mustChangePassword
       localStorage.setItem("adminToken", accessToken);
+      localStorage.setItem("adminMustChangePassword", String(mustChangePassword));
 
+      // 🔹 Редірект куди треба
       if (mustChangePassword) navigate("/admin/change-password");
       else navigate("/admin");
     } catch (err: any) {

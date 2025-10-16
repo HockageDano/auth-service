@@ -28,6 +28,9 @@ export default function AdminChangePassword() {
         { newPassword: password },
         { headers: { Authorization: `Bearer ${token}` } }
       );
+
+      // 🔹 після успішної зміни пароля
+      localStorage.setItem("adminMustChangePassword", "false");
       navigate("/admin");
     } catch (err: any) {
       setError("Не вдалося змінити пароль");
