@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --neon-pink: #ff00c8;
+  --neon-blue: #00fff9;
+  --neon-purple: #7a00ff;
+  --dark-bg: #050014;
+  --neon-glow: 0 0 20px var(--neon-blue), 0 0 40px var(--neon-pink);
+}
+
+body {
+  background: radial-gradient(circle at center, #0a001a, #020009);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--neon-blue);
+  font-family: 'Orbitron', sans-serif;
+  overflow: hidden;
+}
+
+.neon-card {
+  background: rgba(15, 5, 30, 0.8);
+  border: 1px solid rgba(255, 0, 255, 0.2);
+  box-shadow: 0 0 30px rgba(255, 0, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 2.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.neon-title {
+  font-size: 2rem;
+  color: var(--neon-blue);
+  text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-pink);
+  margin-bottom: 1.5rem;
+  letter-spacing: 2px;
+}
+
+.neon-input {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.6rem 0;
+  background: transparent;
+  border: 1px solid var(--neon-blue);
+  border-radius: 6px;
+  color: #fff;
+  outline: none;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.neon-input:focus {
+  border-color: var(--neon-pink);
+  box-shadow: 0 0 15px var(--neon-pink);
+}
+
+.neon-btn {
+  width: 100%;
+  padding: 0.9rem;
+  margin-top: 1rem;
+  background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-blue);
+}
+
+.neon-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px var(--neon-pink), 0 0 30px var(--neon-blue);
+}
+
+.neon-link {
+  display: block;
+  margin-top: 1.2rem;
+  color: var(--neon-blue);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.neon-link:hover {
+  color: var(--neon-pink);
+  text-shadow: 0 0 10px var(--neon-pink);
+}
